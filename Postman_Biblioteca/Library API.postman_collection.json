@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "a4256ece-b335-4541-8eff-845b005394e8",
+		"name": "Library API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44761418",
+		"_collection_link": "https://kidmancabana.postman.co/workspace/Kidman-Cabana's-Workspace~40b4ae31-4f6c-49c3-853a-e720159af9c6/collection/44761418-a4256ece-b335-4541-8eff-845b005394e8?action=share&source=collection_link&creator=44761418"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin User\",\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"123456\",\r\n    \"permissions\": {\r\n        \"createBooks\": true,\r\n        \"modifyBooks\": true,\r\n        \"modifyUsers\": true,\r\n        \"disableUsers\": true,\r\n        \"disableBooks\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODFiYTQ5ZmZjOTg1ZjI5ZTdmNjY1YTkiLCJpYXQiOjE3NDY2NDIwNzl9.FFXZ84eS7bYqliqKtblNek4xJiBA9U__icAo6YZt26w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin User Updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/681ba49ffc985f29e7f665a9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"681ba49ffc985f29e7f665a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODFiOTgwZGFhNDEwNWE2MTg0ZDZhMjQiLCJpYXQiOjE3NDY2Mzk0MzR9.34zObLCn9O63sNUa_VqzXcsF8iKPTEgHHk0MrrRI-b8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/681b980daa4105a6184d6a24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"681b980daa4105a6184d6a24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Register Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODFiYTQ5ZmZjOTg1ZjI5ZTdmNjY1YTkiLCJpYXQiOjE3NDY2NDIwOTZ9.ua34JXanQCTsHs5dO-cupneCrimOEc18DKMt2xW2Ed8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Don Quijote\",\r\n    \"author\": \"Miguel de Cervantes\",\r\n    \"genre\": \"Novela\",\r\n    \"publisher\": \"Editorial XYZ\",\r\n    \"publicationDate\": \"1605-01-01\",\r\n    \"available\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Book by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books/681ba527fc985f29e7f665b2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"681ba527fc985f29e7f665b2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Book by Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books?genre=Novela&author=Miguel de Cervantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "Novela"
+								},
+								{
+									"key": "author",
+									"value": "Miguel de Cervantes"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODFiYTQ5ZmZjOTg1ZjI5ZTdmNjY1YTkiLCJpYXQiOjE3NDY2NDIwOTZ9.ua34JXanQCTsHs5dO-cupneCrimOEc18DKMt2xW2Ed8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Don Quijote - Edición Actualizada\",\r\n    \"available\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/books/681b9d25fc985f29e7f66597",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"681b9d25fc985f29e7f66597"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODFiYTQ5ZmZjOTg1ZjI5ZTdmNjY1YTkiLCJpYXQiOjE3NDY2NDIwOTZ9.ua34JXanQCTsHs5dO-cupneCrimOEc18DKMt2xW2Ed8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/books/681b9d25fc985f29e7f66597",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"681b9d25fc985f29e7f66597"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Register Reservation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODFiYTQ5ZmZjOTg1ZjI5ZTdmNjY1YTkiLCJpYXQiOjE3NDY2NDIwOTZ9.ua34JXanQCTsHs5dO-cupneCrimOEc18DKMt2xW2Ed8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"returnDate\": \"2023-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/books/681ba527fc985f29e7f665b2/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"681ba527fc985f29e7f665b2",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Book History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODFiYTQ5ZmZjOTg1ZjI5ZTdmNjY1YTkiLCJpYXQiOjE3NDY2NDIwOTZ9.ua34JXanQCTsHs5dO-cupneCrimOEc18DKMt2xW2Ed8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/books/681ba527fc985f29e7f665b2/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"681ba527fc985f29e7f665b2",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search User History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODFiYTQ5ZmZjOTg1ZjI5ZTdmNjY1YTkiLCJpYXQiOjE3NDY2NDIwOTZ9.ua34JXanQCTsHs5dO-cupneCrimOEc18DKMt2xW2Ed8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/681ba49ffc985f29e7f665a9/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"681ba49ffc985f29e7f665a9",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
