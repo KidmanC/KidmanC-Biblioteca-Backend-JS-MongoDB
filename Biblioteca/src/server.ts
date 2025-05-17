@@ -5,7 +5,9 @@ import bookRoutes from './book/book.routes';
 
 const app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017/library')
+const dbUrl = process.env.MONGODB_URI;
+
+mongoose.connect(dbUrl as string)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
 
